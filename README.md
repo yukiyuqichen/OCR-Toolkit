@@ -3,6 +3,8 @@ A cute toolkit for OCR, including preprocessing and API use.
 
 一只小小的OCR工具箱，包括图像预处理和API接口调用等功能。
 
+![image](https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/elephant.ico)
+
 # Preprocessing
 ## 1. Binary  
 Denoise the image with binarization based on thresholding.  
