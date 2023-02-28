@@ -11,10 +11,24 @@ Denoise the image with binarization based on thresholding.
 
 对图像进行基于阈值分割的二值化，简单去噪。
 
+<p float="left">
+  <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/binary_before.png" width="300" />
+  <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/binary_after.png" width="300" />
+</p>
+
 ## 2. Split
 Detect the middle line with Hough transform algorithm and segment the image into two parts. It might come in handy when handling documents like dictionary.  
 
 通过霍夫变换检测中间界栏，根据界栏对图像进行分割，适用于词典等版式的文档。
+
+<p float="left">
+  <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/split.png" width="300" />
+  <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/split_line.png" width="300" />
+</p>
+<p float="left">
+  <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/split_left.png" width="300" /> 
+  <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/split_right.png" width="300" />
+</p>
 
 # OCR API  
 Use api of Baidu AI to get the result of OCR and parse it. The text file and probability file are created and aligned.  
