@@ -5,6 +5,9 @@ A cute toolkit for OCR, including preprocessing and API use.
 
 ![image](https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/elephant.ico)
 
+# Download
+[OCR Toolkit 2023.2.28](https://github.com/yukiyuqichen/OCR-Toolkit/releases)
+
 # Preprocessing
 ## 1. Binary  
 Denoise the image with binarization based on thresholding.  
