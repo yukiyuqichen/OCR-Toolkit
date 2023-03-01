@@ -40,7 +40,7 @@ Use PaddleOCR models to get the result of OCR.
 
 <p float="left">
   <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_before.png" width="300" /> 
-  <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_after.png" width="300" />
+  <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_after.png" width="600" />
 </p>
 
 
