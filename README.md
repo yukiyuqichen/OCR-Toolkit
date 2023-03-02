@@ -3,10 +3,15 @@ A cute toolkit for OCR, including image preprocessing and text recognition. Work
 
 一只小小的OCR工具箱，包括图像预处理和文字识别等功能，开箱即用。  
 
-![image](https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/elephant.ico)
+<img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/elephant.ico" width="300" />
 
 # Download
 The exe file can be downloaded: [OCR Toolkit 2023.03.02](https://github.com/yukiyuqichen/OCR-Toolkit/releases/tag/2023.03.02)
+
+<p float="left">
+<img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/UI_1.png" width="300" />
+<img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/UI_2.png" width="300" />
+</p>
 
 # Preprocessing
 ## 1. Binary  
