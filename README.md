@@ -6,7 +6,7 @@ A cute toolkit for OCR, including image preprocessing and text recognition. Work
 <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/elephant.ico" width="300" />
 
 # Download
-The exe file can be downloaded: [OCR Toolkit 2023.03.02](https://github.com/yukiyuqichen/OCR-Toolkit/releases/tag/2023.03.02-new)
+The exe file can be downloaded: [OCR Toolkit 2023.03.02 new](https://github.com/yukiyuqichen/OCR-Toolkit/releases/tag/2023.03.02-new)
 
 <p float="left">
 <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/UI_1.png" width="300" />
