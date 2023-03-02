@@ -10,7 +10,7 @@ The exe file can be downloaded: [OCR Toolkit 2023.2.28](https://github.com/yukiy
 
 # Preprocessing
 ## 1. Binary  
-Denoise the image with binarization based on thresholding.  
+Denoise the image with Binarization Thresholding.  
 
 对图像进行基于阈值分割的二值化，简单去噪。
 
