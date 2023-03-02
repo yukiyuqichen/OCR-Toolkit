@@ -47,7 +47,7 @@ The result will be saved as a structured csv file.
 <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_result.png" width="550" />
 
 ## 2. Online: Baidu API
-Use api of [Baidu AI](https://ai.baidu.com/tech/ocr/general) to get the result of OCR and parse it. Aligned text file and probability file will be created.  
+Use api of [Baidu AI](https://ai.baidu.com/tech/ocr/general) to get the result of OCR and parse it. The result will be saved as a structured csv file.  
 Users need to provide the API_KEY and SECRET_KEY.  
 More APIs are going to be included.  
 
