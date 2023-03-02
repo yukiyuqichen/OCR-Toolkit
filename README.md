@@ -38,7 +38,7 @@ Detect the middle line with Hough transform algorithm and segment the image into
   <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/split_right.png" width="250" />
 </p>
 
-# OCR API  
+# OCR  
 
 ## 1. Offline: PaddleOCR
 Use [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) models to get the result of OCR.  
