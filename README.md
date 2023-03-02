@@ -42,6 +42,7 @@ Detect the middle line with Hough transform algorithm and segment the image into
 
 ## 1. Offline: PaddleOCR
 Use [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) models to get the result of OCR.  
+No KEY is needed.
 The result will be saved as a structured csv file.  
 在本地部署PaddleOCR模型，对图像进行OCR，并将结果存储为结构化的csv文件。  
 
