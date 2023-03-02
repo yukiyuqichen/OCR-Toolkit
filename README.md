@@ -36,7 +36,8 @@ Detect the middle line with Hough transform algorithm and segment the image into
 # OCR API  
 
 ## 1. Offline: PaddleOCR
-Use [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) models to get the result of OCR.
+Use [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) models to get the result of OCR.  
+The result will be saved as a structured csv file.
 
 <p float="left">
   <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_before.png" width="250" /> 
