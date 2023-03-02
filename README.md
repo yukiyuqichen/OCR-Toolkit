@@ -13,8 +13,8 @@ The exe file can be downloaded: [OCR Toolkit 2023.03.02 new](https://github.com/
 <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/UI_2.png" width="300" />
 </p>
 
-# Preprocessing
-## 1. Binary  
+# 1. Preprocessing
+## 1.1 Binary  
 Denoise the image with Binarization Thresholding.  
 
 对图像进行基于阈值分割的二值化，简单去噪。
@@ -24,7 +24,7 @@ Denoise the image with Binarization Thresholding.
   <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/binary_after.png" width="250" />
 </p>
 
-## 2. Split
+## 1.2 Split
 Detect the middle line with Hough transform algorithm and segment the image into two parts. It might come in handy when handling documents like dictionary.  
 
 通过霍夫变换检测中间界栏，根据界栏对图像进行分割，适用于词典等版式的文档。
@@ -38,9 +38,9 @@ Detect the middle line with Hough transform algorithm and segment the image into
   <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/split_right.png" width="250" />
 </p>
 
-# OCR  
+# 2. OCR  
 
-## 1. Offline: PaddleOCR
+## 2.1 Offline: PaddleOCR
 Use [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) models to get the result of OCR.  
 No KEY is needed.
 The result will be saved as a structured csv file.  
@@ -53,7 +53,7 @@ The result will be saved as a structured csv file.
 
 <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_result.png" width="550" />
 
-## 2. Online: Baidu API
+## 2.2 Online: Baidu API
 Use api of [Baidu AI](https://ai.baidu.com/tech/ocr/general) to get the result of OCR and parse it. The result will be saved as a structured csv file.  
 Users need to provide the API_KEY and SECRET_KEY.  
 More APIs are going to be included.  
