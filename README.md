@@ -44,7 +44,7 @@ The result will be saved as a structured csv file.
   <img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_after.png" width="500" />
 </p>
 
-<img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_result.png" width="500" />
+<img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_paddle_result.png" width="550" />
 
 ## 2. Online: Baidu API
 Use api of [Baidu AI](https://ai.baidu.com/tech/ocr/general) to get the result of OCR and parse it. Aligned text file and probability file will be created.  
@@ -54,3 +54,5 @@ More APIs are going to be included.
 使用Baidu AI高精度文字识别的API接口，对图像进行OCR，并将结果解析为对齐的文本文件和置信度文件。  
 用户需自行输入API_KEY和SECRET_KEY。  
 更多接口扩充中。
+
+<img src="https://github.com/yukiyuqichen/OCR-Toolkit/blob/main/examples/ocr_baidu_result.png" width="750" />
