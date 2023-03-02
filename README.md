@@ -45,7 +45,7 @@ Use [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) models to get the res
 
 
 ## 2. Online: Baidu API
-Use api of [Baidu AI](https://ai.baidu.com/tech/ocr/general) to get the result of OCR and parse it. The text file and probability file are created and aligned.  
+Use api of [Baidu AI](https://ai.baidu.com/tech/ocr/general) to get the result of OCR and parse it. Aligned text file and probability file will be created.  
 Users need to provide the API_KEY and SECRET_KEY.  
 More APIs are going to be included.  
 
