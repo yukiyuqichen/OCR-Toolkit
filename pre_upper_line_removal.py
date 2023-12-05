@@ -4,8 +4,8 @@ import cv2
 from sklearn.cluster import KMeans
 
 
-# 根据中间界栏分割页面
-def pre_split(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_num, count_num):
+# 界栏分割页面
+def pre_upper_line_removal(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_num, count_num):
     process.set("")
     frame_pre.update()
     # 读取图片文件
@@ -20,6 +20,10 @@ def pre_split(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_n
     for file in filelist:
         # 图像预处理
         img = cv2.imdecode(np.fromfile(file_path+file, dtype=np.uint8), -1)  # 可读取中文文件名
+
+        # 逆时针90度旋转图片为横向
+        img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
+
         try:
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         except Exception as e:
@@ -30,8 +34,7 @@ def pre_split(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_n
         width = edges.shape[1]
         h = height - 1
         w = width - 1
-        # w_1 = int((width - 1) / 2 - 150)
-        # w_2 = int((width - 1) / 2 + 150)
+        # 设置upper line可能出现的范围
         w_1 = 0
         w_2 = 200
 
@@ -142,12 +145,19 @@ def pre_split(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_n
         # 通过遮挡间接实现图像切分，分别存储左右两张图像
         left_img_points = np.array([[(point_top_x, 0), (w, 0), (w, h), (point_down_x, h)]], dtype=np.int32)
         right_img_points = np.array([[(0, 0), (point_top_x, 0), (point_down_x, h), (0, h)]], dtype=np.int32)
-        left_img = np.copy(binary)
-        right_img = np.copy(binary)
-        cv2.fillConvexPoly(left_img, left_img_points, (255, 255, 255))
-        # cv2.imwrite(save_path + str(file).replace(".*", "") + "_left" + ".png", left_img)
-        cv2.imencode('.jpg', left_img)[1].tofile(save_path + str(file).replace(".*", "") + "_left" + ".png")  # 可存储中文文件名
+        left_img = np.copy(img)
+        right_img = np.copy(img)
+
+        # cv2.fillConvexPoly(left_img, left_img_points, (255, 255, 255))
+        # # 顺时针90度旋转图片为竖向
+        # left_img = cv2.rotate(left_img, cv2.ROTATE_90_CLOCKWISE)
+        # # cv2.imwrite(save_path + str(file).replace(".*", "") + "_left" + ".png", left_img)
+        # cv2.imencode('.jpg', left_img)[1].tofile(save_path + str(file).replace(".*", "") + "_left" + ".png")  # 可存储中文文件名
+
+        # 只存储右边的图片
         cv2.fillConvexPoly(right_img, right_img_points, (255, 255, 255))
+        # 顺时针90度旋转图片为竖向
+        right_img = cv2.rotate(right_img, cv2.ROTATE_90_CLOCKWISE)
         # cv2.imwrite(save_path + str(file).replace(".*", "") + "_right" + ".png", right_img)
         cv2.imencode('.jpg', right_img)[1].tofile(save_path + str(file).replace(".*", "") + "_right" + ".png")  # 可存储中文文件名
         # 打印进度

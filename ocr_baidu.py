@@ -6,6 +6,9 @@ import urllib
 
 
 # 接入百度API进行OCR
+import load_files
+
+
 def get_access_token(api_key, secret_key):
     """
     使用 AK，SK 生成鉴权签名（Access Token）
@@ -38,24 +41,16 @@ def ocr_baidu(image, frame_ocr, token, api_key, secret_key):
         frame_ocr.update()
 
 
-def ocr_baidu_parser(frame_ocr, ocr_select_dir_path, ocr_save_dir_path, api_key, secret_key, token, process, process_end, file_num, count_num):
+def ocr_baidu_parser(frame_ocr, ocr_select_dir_path, ocr_save_dir_path, api_key, secret_key, token, process, file_num, count_num):
     token.set("")
     process.set("")
-    process_end.set("")
     frame_ocr.update()
-    filelist = os.listdir(ocr_select_dir_path.get())
     text_write = []
     probability_write = []
-    # 略过非图片文件，将图片文件存入新的列表
-    new_filelist = []
-    for file in filelist:
-        file_path = ocr_select_dir_path.get() + '/' + file
-        img_type = {'jpg', 'jpeg', 'bmp', 'png', 'tif', 'tiff'}
-        if imghdr.what(file_path) not in img_type:
-            continue
-        new_filelist.append(file)
+    # 读取图片文件
+    filelist = load_files.load_img(ocr_select_dir_path)
     # 对新列表中的图片文件进行ocr
-    file_len = len(new_filelist)
+    file_len = len(filelist)
     file_num.set(file_len)
     count = 0
     count_num.set(0)
@@ -64,7 +59,7 @@ def ocr_baidu_parser(frame_ocr, ocr_select_dir_path, ocr_save_dir_path, api_key,
     save_score_ave = []
     save_score_min = []
     save_score_var = []
-    for file in new_filelist:
+    for file in filelist:
         file_path = ocr_select_dir_path.get() + '/' + file
         json = ocr_baidu(file_path, frame_ocr, token, api_key, secret_key)
         text = json["words_result"]
@@ -78,7 +73,7 @@ def ocr_baidu_parser(frame_ocr, ocr_select_dir_path, ocr_save_dir_path, api_key,
             f.write("filename,text,score_ave,score_min,score_var" + "\n")
             for i in range(len(save_filename)):
                 f.write(save_filename[i] + ",")
-                f.write(save_text[i] + ",")
+                f.write('"' + save_text[i] + '"' + ",")
                 f.write(str(save_score_ave[i]) + ",")
                 f.write(str(save_score_min[i]) + ",")
                 f.write(str(save_score_var[i]) + "\n")
@@ -88,6 +83,6 @@ def ocr_baidu_parser(frame_ocr, ocr_select_dir_path, ocr_save_dir_path, api_key,
         process.set("Processing: " + str(count_num.get()) + " / " + str(file_num.get()))
         frame_ocr.update()
         print("Finish: " + str(count) + " / " + str(file_len))
-    process_end.set("Finished!")
+    process.set("Finished!")
     frame_ocr.update()
     print("Finished!")
