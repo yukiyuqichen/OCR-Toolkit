@@ -99,7 +99,7 @@ def thread_it(func, *args):
 # 创建主窗口
 root_window = tk.Tk()
 # 设置主窗口标题
-root_window.title('OCR Tookit')
+root_window.title('OCR Toolkit')
 # 设置主窗口大小
 root_window.geometry('350x300')
 
@@ -205,5 +205,6 @@ tk.Button(frame_about, text="OCR-Toolkit on Github", command=open_url).grid(row=
 
 # 进入主循环，显示主窗口
 root_window.mainloop()
+
 
 
