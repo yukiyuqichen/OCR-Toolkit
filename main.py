@@ -9,6 +9,7 @@ import pre_denoise
 import pre_binary
 import pre_skew
 import pre_split
+import pre_split_2_lines
 import pre_split_without_line
 import pre_black_edge
 import pre_upper_line_removal
@@ -57,8 +58,10 @@ def preprocess():
         pre_binary.pre_binary(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_num, count_num)
     if pre_option.get() == "Skew Correction 倾斜校正":
         pre_skew.pre_skew(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_num, count_num)
-    if pre_option.get() == "Split 根据中间界栏分割图片":
+    if pre_option.get() == "Split 根据中间1条界栏分割图片":
         pre_split.pre_split(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_num, count_num)
+    if pre_option.get() == "Split 根据中间2条界栏分割图片":
+        pre_split_2_lines.pre_split(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_num, count_num)
     if pre_option.get() == "Split 根据中间空白分割图片":
         pre_split_without_line.pre_split_without_line(pre_select_dir_path, pre_save_dir_path, frame_pre, process, file_num, count_num)
     if pre_option.get() == "Black Edge 去黑边":
@@ -132,7 +135,7 @@ tk.Label(frame_pre, text="      ").grid(row=0, column=1)
 # 下拉菜单
 tk.Label(frame_pre, text="Option: ").grid(row=1, column=2)
 com_pre = ttk.Combobox(frame_pre, textvariable=pre_option)
-com_pre["value"] = ("Denoise 去噪", "Binarization 二值化", "Skew Correction 倾斜校正", "Split 根据中间界栏分割图片", "Split 根据中间空白分割图片", "Black Edge 去黑边", "Upper Line 去除上方界栏", "Watermark 去水印", "Rotate 旋转图片")
+com_pre["value"] = ("Denoise 去噪", "Binarization 二值化", "Skew Correction 倾斜校正", "Split 根据中间1条界栏分割图片", "Split 根据中间2条界栏分割图片", "Split 根据中间空白分割图片", "Black Edge 去黑边", "Upper Line 去除上方界栏", "Watermark 去水印", "Rotate 旋转图片")
 com_pre.current(0)
 com_pre.grid(row=1, column=3)
 # 路径选择组件
